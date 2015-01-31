@@ -1,13 +1,13 @@
 document.forms['todo'].add.addEventListener('click', addItem);
 
 function addItem() {
-  var item = document.getElementById('new');
-  if(item.value !== "") {
-    var list = document.getElementById('list');
-    var li = document.createElement('li');
-    li.innerHTML = item.value;
-    list.appendChild(li);
-    item.value = "";
+  var item = $('#new')
+  if(item.val() !== "") {
+    var list = $('#list')
+    var checkbox = $('<input type="checkbox">');
+    list.append(checkbox);
+    list.append(item.val() + '<br>')
+    item.val("");
   }
 }
 
